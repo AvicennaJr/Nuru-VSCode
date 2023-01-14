@@ -1,0 +1,156 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Nuru Programming Language",
+	"scopeName": "source.nr",
+	"fileTypes": [
+		"nr"
+	],
+	"patterns": [
+		{
+			"include": "#linecomments"
+		},
+		{
+			"include": "#blockcomments"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#punctuation"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#constant"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#identifiers"
+		}
+	],
+	"repository": {
+		"linecomments": {
+			"name": "comment.line.double-slash.nr",
+			"match": "(//).*$\n?",
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.comment.nr"
+				}
+			}
+		},
+		"blockcomments": {
+			"name": "comment.block.nr",
+			"begin": "/\\*",
+			"end": "\\*/",
+			"captures": {
+				"0": {
+					"name": "punctuation.definition.comment.nr"
+				}
+			}
+		},
+		"numbers": {
+			"name": "constant.numeric.nr",
+			"match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+		},
+		"constant": {
+			"name": "constant.language.nr",
+			"match": "\\b(kweli|sikweli)\\b"
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.arithmetic.nr",
+					"match": "\\b(\\+|\\-|%|\\*|\\/|\\^)\\b"
+				},
+				{
+					"name": "keyword.operator.logical.nr",
+					"match": "\\b(==|<=|>=|<|>|&&|\\|\\|)\\b"
+				},
+				{
+					"name": "keyword.operator.assignment.nr",
+					"match": "\\b(=|:)\\b"
+				},
+				{
+					"name": "punctuation.accessor.nr",
+					"match": "\\."
+				}
+			]
+		},
+		"punctuation": {
+			"patterns": [
+				{
+					"name": "punctuation.separator",
+					"match": ","
+				},
+				{
+					"include": "#groups"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "storage.type.function.nr",
+					"match": "\\b(unda|andika|idadi|jumla|yamwisho|sukuma|jaza|aina|fungua)\\b"
+				},
+				{
+					"name": "storage.type.nr",
+					"match": "\\bfanya\\b"
+				},
+				{
+					"name": "keyword.control.nuru",
+					"match": "\\b(kama|au|sivyo|wakati|rudisha|vunja|endelea|tupu|ktk|kwa|badili|ikiwa|kawaida|tumia)\\b"
+				},
+				{
+					"name": "support.function.nuru",
+					"match": "\\b(os|muda)\\b"
+				}
+			]
+		},
+		"identifiers": {
+			"patterns": [
+				{
+					"name": "meta.functioncall.nr",
+					"match": "\\b([_A-Za-z][_A-Za-z0-9]*)\\b(?=\\()",
+					"captures": {
+						"1": {
+							"name": "entity.name.function.nr"
+						}
+					}
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.nuru",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.nuru",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
+					"name": "string.quoted.single.nuru",
+					"begin": "\\'",
+					"end": "\\'",
+					"patterns": [
+						{
+							"name": "constant.character.escape.nuru",
+							"match": "\\\\."
+						}
+					]
+				}
+			]
+		}
+	}
+}
