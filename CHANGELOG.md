@@ -1,9 +1,11 @@
 # Change Log
 
-All notable changes to the "nuru" extension will be documented in this file.
+Nuru VSCode Extension Changelogs
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
+## v0.0.1
 
 - Initial release
+
+## v0.0.2
+
+- Make extension compatible with vscode v1.50.0 and above
