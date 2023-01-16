@@ -2,12 +2,12 @@
   "name": "nuru",
   "displayName": "Nuru Programming Language",
   "description": "Nuru Programming Language",
-  "version": "0.0.1",
-  "publisher": "avicennajr",
+  "version": "0.0.2",
+  "publisher": "nuruprogramminglanguage",
   "icon": "assets/icon.png",
-  "repository": "https://github.com/AvicennaJr/Nuru-VSCode"
+  "repository": "https://github.com/AvicennaJr/Nuru-VSCode",
   "engines": {
-    "vscode": "^1.74.0"
+    "vscode": "^1.50.0"
   },
   "categories": [
     "Programming Languages"
